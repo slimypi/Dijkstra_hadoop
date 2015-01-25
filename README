@@ -1,0 +1,16 @@
+=================Compiling Everything============================================================
+
+cd the folder then execute : 
+
+$ mkdir shortest_path_classes (if not already existing)
+
+$ javac -classpath ${HADOOP_HOME}/hadoop-core-${HADOOP_VERSION}.jar:$HADOOP_HOME/lib/commons-cli-1.2.jar -d shortest_path_classes ShortestPath.java
+
+
+=================Extracting Jar Components ======================================================
+
+ jar -cvf shortest_path.jar -C shortest_path_classes/ .
+
+================Executing the Code ==============================================================
+
+$ ${HADOOP_HOME}/bin/hadoop jar shortest_path.jar ShortestPath input output   (Check evrytime you execute that the OUTPUTS OF PREVIOUS EXECUTION ARE DELETED)
